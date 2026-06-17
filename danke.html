@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danke – Luisa Fischer</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:   #F7F3EE;
+      --cream2:  #EFE9E1;
+      --sage:    #8A9E8C;
+      --olive:   #6B7A5E;
+      --rose:    #C4957A;
+      --charcoal:#2E2E2B;
+      --mid:     #5A5750;
+      --light:   #9E9A94;
+      --white:   #FFFFFF;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans:  'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ── */
+    header {
+      border-bottom: 1px solid #DDD6CC;
+      padding: 1.4rem 2rem;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .logo span {
+      color: var(--rose);
+      font-style: italic;
+    }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+    }
+
+    .danke-card {
+      max-width: 640px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .icon {
+      width: 56px;
+      height: 56px;
+      background: var(--cream2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      border: 1px solid #DDD6CC;
+    }
+    .icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--sage);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--charcoal);
+      margin-bottom: 1.6rem;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .danke-text {
+      font-size: 1rem;
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .hinweis {
+      background: var(--cream2);
+      border: 1px solid #DDD6CC;
+      border-radius: 4px;
+      padding: 1.2rem 1.6rem;
+      font-size: 0.88rem;
+      color: var(--mid);
+      line-height: 1.75;
+      margin: 2rem 0 2.8rem;
+      text-align: left;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: #DDD6CC;
+      margin: 2.8rem auto;
+    }
+
+    .kurs-empfehlung h2 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      margin-bottom: 0.6rem;
+    }
+    .kurs-empfehlung p {
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .kurs-karten {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .kurs-karte {
+      background: var(--white);
+      border: 1px solid #DDD6CC;
+      border-radius: 4px;
+      padding: 1.4rem;
+      text-align: left;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      display: block;
+    }
+    .kurs-karte:hover {
+      border-color: var(--rose);
+      box-shadow: 0 2px 12px rgba(196,149,122,0.12);
+    }
+    .kurs-karte strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 0.4rem;
+    }
+    .kurs-karte span {
+      font-size: 0.85rem;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+    .kurs-karte .pill {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--rose);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid #DDD6CC;
+      padding: 1.8rem 2rem;
+      text-align: center;
+    }
+    footer p {
+      font-size: 0.8rem;
+      color: var(--light);
+    }
+    footer a {
+      color: var(--light);
+      text-decoration: none;
+      margin: 0 0.6rem;
+    }
+    footer a:hover { color: var(--mid); }
+
+    @media (max-width: 580px) {
+      .kurs-karten { grid-template-columns: 1fr; }
+      h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">Der <span>Hormonshift</span></a>
+  </div>
+</header>
+
+<main>
+  <div class="danke-card">
+
+    <div class="icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 6L9 17l-5-5" />
+      </svg>
+    </div>
+
+    <p class="eyebrow">Orientierungsbogen eingegangen</p>
+
+    <h1>Danke für dein<br /><em>Vertrauen.</em></h1>
+
+    <p class="danke-text">
+      Ich habe deinen Bogen erhalten und schaue ihn mir in Ruhe an.
+      Du bekommst eine persönliche Antwort von mir – meistens innerhalb weniger Tage.
+    </p>
+
+    <div class="hinweis">
+      <strong>Bitte beachte:</strong> Eine individuelle Einordnung ersetzt keine ärztliche Diagnose.
+      Sollten starke, neue oder beunruhigende Beschwerden bestehen, lass diese bitte medizinisch abklären –
+      unabhängig von meiner Rückmeldung.
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="kurs-empfehlung">
+      <h2>Du musst nicht warten.</h2>
+      <p>
+        Während du auf meine Antwort wartest, kannst du bereits anfangen zu verstehen,
+        was in deinem Körper gerade passiert. Diese beiden Kurse geben dir das Fundament –
+        sofort, ohne Wartezeit.
+      </p>
+
+      <div class="kurs-karten">
+        <a href="https://perimenopausekompass.netlify.app" class="kurs-karte" target="_blank">
+          <strong>Perimenopause Kompass</strong>
+          <span>Was gerade hormonell passiert – und warum dein Körper sich so anfühlt, wie er sich anfühlt.</span>
+          <div class="pill">Jetzt ansehen →</div>
+        </a>
+        <a href="#" class="kurs-karte">
+          <strong>Hormonshift im Alltag</strong>
+          <span>Konkrete Strategien für Schlaf, Energie, Stimmung und Zyklus – direkt umsetzbar.</span>
+          <div class="pill">Mehr erfahren →</div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </p>
+  <p style="margin-top:0.5rem;">© 2025 Luisa Fischer · Der Hormonshift · Lohne, Niedersachsen</p>
+</footer>
+
+</body>
+</html>
