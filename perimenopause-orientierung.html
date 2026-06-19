@@ -283,69 +283,6 @@
       flex-shrink: 0;
     }
 
-    .slider-group {
-      margin-top: 1.1rem;
-      padding-top: 1rem;
-      border-top: 1px dashed #DDD6CC;
-    }
-    .slider-group label {
-      display: block;
-      font-size: 0.88rem;
-      color: var(--mid);
-      margin-bottom: 0.7rem;
-    }
-    .slider-row {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    input[type="range"] {
-      flex: 1;
-      -webkit-appearance: none;
-      appearance: none;
-      height: 4px;
-      border-radius: 2px;
-      background: #DDD6CC;
-      outline: none;
-      cursor: pointer;
-    }
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: var(--rose);
-      cursor: pointer;
-      border: 2px solid var(--white);
-      box-shadow: 0 0 0 1px var(--rose);
-    }
-    input[type="range"]::-moz-range-thumb {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: var(--rose);
-      cursor: pointer;
-      border: 2px solid var(--white);
-      box-shadow: 0 0 0 1px var(--rose);
-    }
-    .slider-value {
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      font-weight: 500;
-      color: var(--rose);
-      min-width: 2.4rem;
-      text-align: center;
-      flex-shrink: 0;
-    }
-    .slider-scale {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.72rem;
-      color: var(--light);
-      margin-top: 0.35rem;
-    }
-
     .section-divider {
       font-family: var(--font-serif);
       font-size: 1.25rem;
@@ -744,13 +681,13 @@
 
     <div class="form-group">
       <label>Wie würdest du deinen Zyklus gerade beschreiben?</label>
-      <div class="check-group">
-        <label><input type="checkbox" name="Zyklus_Regelmaessig" value="Ja" /> Regelmäßig wie früher</label>
-        <label><input type="checkbox" name="Zyklus_Unregelmaessig" value="Ja" /> Unregelmäßiger geworden</label>
-        <label><input type="checkbox" name="Zyklus_Blutungsstaerke" value="Ja" /> Stärkere oder schwächere Blutungen</label>
-        <label><input type="checkbox" name="Zyklus_Fehlend" value="Ja" /> Zyklen fehlen manchmal ganz</label>
-        <label><input type="checkbox" name="Zyklus_Postmenopausal" value="Ja" /> Keine Blutungen mehr (postmenopausal)</label>
-        <label><input type="checkbox" name="Zyklus_Spirale" value="Ja" /> Spirale / hormonelle Verhütung</label>
+      <div class="radio-group">
+        <label><input type="radio" name="Zyklus_Status" value="Regelmäßig wie früher" /> Regelmäßig wie früher</label>
+        <label><input type="radio" name="Zyklus_Status" value="Unregelmäßiger geworden" /> Unregelmäßiger geworden</label>
+        <label><input type="radio" name="Zyklus_Status" value="Stärkere oder schwächere Blutungen" /> Stärkere oder schwächere Blutungen</label>
+        <label><input type="radio" name="Zyklus_Status" value="Zyklen fehlen manchmal ganz" /> Zyklen fehlen manchmal ganz</label>
+        <label><input type="radio" name="Zyklus_Status" value="Keine Blutungen mehr (postmenopausal)" /> Keine Blutungen mehr (postmenopausal)</label>
+        <label><input type="radio" name="Zyklus_Status" value="Spirale / hormonelle Verhütung – keine Einschätzung möglich" /> Spirale / hormonelle Verhütung</label>
       </div>
     </div>
 
@@ -765,19 +702,12 @@
 
     <div class="form-group">
       <label>Wie schläfst du gerade?</label>
-      <div class="check-group">
-        <label><input type="checkbox" name="Schlaf_Gut" value="Ja" /> Gut – ich schlafe durch</label>
-        <label><input type="checkbox" name="Schlaf_Nachtaufwachen" value="Ja" /> Ich wache nachts auf</label>
-        <label><input type="checkbox" name="Schlaf_Einschlafen" value="Ja" /> Einschlafen fällt schwer</label>
-        <label><input type="checkbox" name="Schlaf_Durchschlafen" value="Ja" /> Aufwachen und nicht mehr einschlafen</label>
-        <label><input type="checkbox" name="Schlaf_Schwitzen" value="Ja" /> Nächtliches Schwitzen stört den Schlaf</label>
-      </div>
-      <div class="slider-group">
-        <label for="schlaf_intensitaet">Wie stark beeinträchtigt dich das insgesamt? <strong id="schlaf_intensitaet_label">5</strong>/10</label>
-        <div class="slider-row">
-          <input type="range" id="schlaf_intensitaet" name="Schlaf_Intensitaet" min="0" max="10" value="5" />
-        </div>
-        <div class="slider-scale"><span>kaum spürbar</span><span>sehr belastend</span></div>
+      <div class="radio-group">
+        <label><input type="radio" name="Schlaf" value="Gut – ich schlafe durch" /> Gut – ich schlafe durch</label>
+        <label><input type="radio" name="Schlaf" value="Ich wache nachts auf" /> Ich wache nachts auf</label>
+        <label><input type="radio" name="Schlaf" value="Einschlafen fällt schwer" /> Einschlafen fällt schwer</label>
+        <label><input type="radio" name="Schlaf" value="Aufwachen und nicht mehr einschlafen" /> Aufwachen und nicht mehr einschlafen</label>
+        <label><input type="radio" name="Schlaf" value="Nächtliches Schwitzen stört den Schlaf" /> Nächtliches Schwitzen stört den Schlaf</label>
       </div>
     </div>
 
@@ -786,19 +716,12 @@
 
     <div class="form-group">
       <label>Hitzewallungen oder Nachtschweiß?</label>
-      <div class="check-group">
-        <label><input type="checkbox" name="Hitze_Keine" value="Ja" /> Nein, nichts davon</label>
-        <label><input type="checkbox" name="Hitze_Gelegentlich_Tag" value="Ja" /> Gelegentlich Hitzewallungen tagsüber</label>
-        <label><input type="checkbox" name="Hitze_Haeufig" value="Ja" /> Häufige Hitzewallungen</label>
-        <label><input type="checkbox" name="Hitze_Nachtschweiss" value="Ja" /> Nachtschweiß, der mich aufweckt</label>
-        <label><input type="checkbox" name="Hitze_Beides" value="Ja" /> Beides – tagsüber und nachts</label>
-      </div>
-      <div class="slider-group">
-        <label for="hitze_intensitaet">Wie stark beeinträchtigt dich das insgesamt? <strong id="hitze_intensitaet_label">5</strong>/10</label>
-        <div class="slider-row">
-          <input type="range" id="hitze_intensitaet" name="Hitze_Intensitaet" min="0" max="10" value="5" />
-        </div>
-        <div class="slider-scale"><span>kaum spürbar</span><span>sehr belastend</span></div>
+      <div class="radio-group">
+        <label><input type="radio" name="Hitze" value="Nein, nichts davon" /> Nein, nichts davon</label>
+        <label><input type="radio" name="Hitze" value="Gelegentlich Hitzewallungen tagsüber" /> Gelegentlich Hitzewallungen tagsüber</label>
+        <label><input type="radio" name="Hitze" value="Häufige Hitzewallungen" /> Häufige Hitzewallungen</label>
+        <label><input type="radio" name="Hitze" value="Nachtschweiß, der mich aufweckt" /> Nachtschweiß, der mich aufweckt</label>
+        <label><input type="radio" name="Hitze" value="Beides – tagsüber und nachts" /> Beides – tagsüber und nachts</label>
       </div>
     </div>
 
@@ -807,18 +730,11 @@
 
     <div class="form-group">
       <label>Wie ist dein Energieniveau im Alltag?</label>
-      <div class="check-group">
-        <label><input type="checkbox" name="Energie_Stabil" value="Ja" /> Stabil und ausreichend</label>
-        <label><input type="checkbox" name="Energie_Schwankend" value="Ja" /> Schwankend, aber akzeptabel</label>
-        <label><input type="checkbox" name="Energie_Erschoepft" value="Ja" /> Oft erschöpft, auch ohne klaren Grund</label>
-        <label><input type="checkbox" name="Energie_Crash" value="Ja" /> Extreme Erschöpfung / Crash-Momente</label>
-      </div>
-      <div class="slider-group">
-        <label for="energie_intensitaet">Wie stark beeinträchtigt dich das insgesamt? <strong id="energie_intensitaet_label">5</strong>/10</label>
-        <div class="slider-row">
-          <input type="range" id="energie_intensitaet" name="Energie_Intensitaet" min="0" max="10" value="5" />
-        </div>
-        <div class="slider-scale"><span>kaum spürbar</span><span>sehr belastend</span></div>
+      <div class="radio-group">
+        <label><input type="radio" name="Energie" value="Stabil und ausreichend" /> Stabil und ausreichend</label>
+        <label><input type="radio" name="Energie" value="Schwankend, aber akzeptabel" /> Schwankend, aber akzeptabel</label>
+        <label><input type="radio" name="Energie" value="Oft erschöpft, auch ohne klaren Grund" /> Oft erschöpft, auch ohne klaren Grund</label>
+        <label><input type="radio" name="Energie" value="Extreme Erschöpfung / Crash-Momente" /> Extreme Erschöpfung / Crash-Momente</label>
       </div>
     </div>
 
@@ -836,13 +752,6 @@
         <label><input type="checkbox" name="Stimmung_Unruhe" value="Ja" /> Innere Unruhe, die sich nicht erklären lässt</label>
         <label><input type="checkbox" name="Stimmung_Weinen" value="Ja" /> Ich weine leichter oder ohne erkennbaren Grund</label>
         <label><input type="checkbox" name="Stimmung_Stabil" value="Ja" /> Stimmung ist weitgehend stabil</label>
-      </div>
-      <div class="slider-group">
-        <label for="stimmung_intensitaet">Wie stark beeinträchtigt dich das insgesamt? <strong id="stimmung_intensitaet_label">5</strong>/10</label>
-        <div class="slider-row">
-          <input type="range" id="stimmung_intensitaet" name="Stimmung_Intensitaet" min="0" max="10" value="5" />
-        </div>
-        <div class="slider-scale"><span>kaum spürbar</span><span>sehr belastend</span></div>
       </div>
     </div>
 
@@ -865,18 +774,11 @@
 
     <div class="form-group">
       <label>Wie würdest du dein aktuelles Stressniveau einschätzen?</label>
-      <div class="check-group">
-        <label><input type="checkbox" name="Stress_Gering" value="Ja" /> Gering – ich fühle mich ausgeglichen</label>
-        <label><input type="checkbox" name="Stress_Mittel" value="Ja" /> Mittel – manchmal viel, aber handhabbar</label>
-        <label><input type="checkbox" name="Stress_Hoch" value="Ja" /> Hoch – ich bin oft angespannt</label>
-        <label><input type="checkbox" name="Stress_SehrHoch" value="Ja" /> Sehr hoch – ich fühle mich dauerhaft überlastet</label>
-      </div>
-      <div class="slider-group">
-        <label for="stress_intensitaet">Wie stark beeinträchtigt dich das insgesamt? <strong id="stress_intensitaet_label">5</strong>/10</label>
-        <div class="slider-row">
-          <input type="range" id="stress_intensitaet" name="Stress_Intensitaet" min="0" max="10" value="5" />
-        </div>
-        <div class="slider-scale"><span>kaum spürbar</span><span>sehr belastend</span></div>
+      <div class="radio-group">
+        <label><input type="radio" name="Stress" value="Gering – ich fühle mich ausgeglichen" /> Gering – ich fühle mich ausgeglichen</label>
+        <label><input type="radio" name="Stress" value="Mittel – manchmal viel, aber handhabbar" /> Mittel – manchmal viel, aber handhabbar</label>
+        <label><input type="radio" name="Stress" value="Hoch – ich bin oft angespannt" /> Hoch – ich bin oft angespannt</label>
+        <label><input type="radio" name="Stress" value="Sehr hoch – ich fühle mich dauerhaft überlastet" /> Sehr hoch – ich fühle mich dauerhaft überlastet</label>
       </div>
     </div>
 
@@ -908,11 +810,12 @@
 
     <div class="form-group">
       <label>Hast du Veränderungen bei Verdauung oder Stoffwechsel bemerkt?</label>
-      <div class="check-group">
-        <label><input type="checkbox" name="Verdauung_Keine" value="Ja" /> Nein, alles wie gewohnt</label>
-        <label><input type="checkbox" name="Verdauung_Blaehungen" value="Ja" /> Blähungen oder Unverträglichkeiten</label>
-        <label><input type="checkbox" name="Verdauung_Unregelmaessig" value="Ja" /> Darm unregelmäßiger geworden</label>
-        <label><input type="checkbox" name="Verdauung_Gewicht" value="Ja" /> Gewicht steigt trotz unveränderter Ernährung</label>
+      <div class="radio-group">
+        <label><input type="radio" name="Verdauung" value="Nein, alles wie gewohnt" /> Nein, alles wie gewohnt</label>
+        <label><input type="radio" name="Verdauung" value="Blähungen oder Unverträglichkeiten" /> Blähungen oder Unverträglichkeiten</label>
+        <label><input type="radio" name="Verdauung" value="Darm unregelmäßiger geworden" /> Darm unregelmäßiger geworden</label>
+        <label><input type="radio" name="Verdauung" value="Gewicht steigt trotz unveränderter Ernährung" /> Gewicht steigt trotz unveränderter Ernährung</label>
+        <label><input type="radio" name="Verdauung" value="Mehreres davon" /> Mehreres davon</label>
       </div>
     </div>
 
@@ -922,12 +825,12 @@
     <div class="form-group">
       <label>Gibt es eine bekannte Schilddrüsendiagnose?</label>
       <span class="hint">Schilddrüsenprobleme – besonders Hashimoto – werden in der Perimenopause oft erstmals auffällig oder verstärken sich.</span>
-      <div class="check-group">
-        <label><input type="checkbox" name="Schilddruese_Keine_Diagnose" value="Ja" /> Nein, keine bekannte Diagnose</label>
-        <label><input type="checkbox" name="Schilddruese_Hashimoto" value="Ja" /> Hashimoto</label>
-        <label><input type="checkbox" name="Schilddruese_Hypo" value="Ja" /> Hypothyreose (Unterfunktion)</label>
-        <label><input type="checkbox" name="Schilddruese_Hyper" value="Ja" /> Hyperthyreose (Überfunktion)</label>
-        <label><input type="checkbox" name="Schilddruese_Unbekannt" value="Ja" /> Wurde noch nie untersucht</label>
+      <div class="radio-group">
+        <label><input type="radio" name="Schilddruese_Diagnose" value="Nein, keine bekannte Diagnose" /> Nein, keine bekannte Diagnose</label>
+        <label><input type="radio" name="Schilddruese_Diagnose" value="Hashimoto" /> Hashimoto</label>
+        <label><input type="radio" name="Schilddruese_Diagnose" value="Hypothyreose (Unterfunktion)" /> Hypothyreose (Unterfunktion)</label>
+        <label><input type="radio" name="Schilddruese_Diagnose" value="Hyperthyreose (Überfunktion)" /> Hyperthyreose (Überfunktion)</label>
+        <label><input type="radio" name="Schilddruese_Diagnose" value="Wurde noch nie untersucht" /> Wurde noch nie untersucht</label>
       </div>
     </div>
 
@@ -947,23 +850,23 @@
 
     <div class="form-group">
       <label>Welche Verhütungsmethode nutzt du aktuell?</label>
-      <div class="check-group">
-        <label><input type="checkbox" name="Verhuetung_Keine" value="Ja" /> Keine</label>
-        <label><input type="checkbox" name="Verhuetung_Hormonspirale" value="Ja" /> Hormonspirale</label>
-        <label><input type="checkbox" name="Verhuetung_Kupferspirale" value="Ja" /> Kupferspirale</label>
-        <label><input type="checkbox" name="Verhuetung_Pille" value="Ja" /> Pille oder Minipille</label>
-        <label><input type="checkbox" name="Verhuetung_Andere" value="Ja" /> Andere hormonelle Methode</label>
-        <label><input type="checkbox" name="Verhuetung_Sterilisation" value="Ja" /> Sterilisation</label>
+      <div class="radio-group">
+        <label><input type="radio" name="Verhuetung_Aktuell" value="Keine" /> Keine</label>
+        <label><input type="radio" name="Verhuetung_Aktuell" value="Hormonspirale" /> Hormonspirale</label>
+        <label><input type="radio" name="Verhuetung_Aktuell" value="Kupferspirale" /> Kupferspirale</label>
+        <label><input type="radio" name="Verhuetung_Aktuell" value="Pille oder Minipille" /> Pille oder Minipille</label>
+        <label><input type="radio" name="Verhuetung_Aktuell" value="Andere hormonelle Methode" /> Andere hormonelle Methode</label>
+        <label><input type="radio" name="Verhuetung_Aktuell" value="Sterilisation / Partner sterilisiert" /> Sterilisation</label>
       </div>
     </div>
 
     <div class="form-group">
       <label>Hast du früher längere Zeit die Pille genommen?</label>
-      <div class="check-group">
-        <label><input type="checkbox" name="Pille_Nein" value="Ja" /> Nein</label>
-        <label><input type="checkbox" name="Pille_Unter5" value="Ja" /> Ja, unter 5 Jahre</label>
-        <label><input type="checkbox" name="Pille_5bis10" value="Ja" /> Ja, 5–10 Jahre</label>
-        <label><input type="checkbox" name="Pille_Ueber10" value="Ja" /> Ja, über 10 Jahre</label>
+      <div class="radio-group">
+        <label><input type="radio" name="Pille_Frueeher" value="Nein" /> Nein</label>
+        <label><input type="radio" name="Pille_Frueeher" value="Ja, unter 5 Jahre" /> Ja, unter 5 Jahre</label>
+        <label><input type="radio" name="Pille_Frueeher" value="Ja, 5–10 Jahre" /> Ja, 5–10 Jahre</label>
+        <label><input type="radio" name="Pille_Frueeher" value="Ja, über 10 Jahre" /> Ja, über 10 Jahre</label>
       </div>
     </div>
 
@@ -985,21 +888,21 @@
     <div class="form-group">
       <label>Wie würdest du deine Ernährung gerade einschätzen?</label>
       <span class="hint">Keine Wertung – nur ein Anhaltspunkt.</span>
-      <div class="check-group">
-        <label><input type="checkbox" name="Ernaehrung_Ausgewogen" value="Ja" /> Ausgewogen und bewusst</label>
-        <label><input type="checkbox" name="Ernaehrung_Wechselhaft" value="Ja" /> Mal so, mal so – je nach Stress</label>
-        <label><input type="checkbox" name="Ernaehrung_Zucker" value="Ja" /> Viel Zucker oder verarbeitete Lebensmittel</label>
-        <label><input type="checkbox" name="Ernaehrung_Wenig_Zeit" value="Ja" /> Wenig Zeit zum Kochen, viel unterwegs</label>
+      <div class="radio-group">
+        <label><input type="radio" name="Ernaehrung" value="Ausgewogen und bewusst" /> Ausgewogen und bewusst</label>
+        <label><input type="radio" name="Ernaehrung" value="Mal so, mal so – je nach Stress" /> Mal so, mal so – je nach Stress</label>
+        <label><input type="radio" name="Ernaehrung" value="Viel Zucker oder verarbeitete Lebensmittel" /> Viel Zucker oder verarbeitete Lebensmittel</label>
+        <label><input type="radio" name="Ernaehrung" value="Wenig Zeit zum Kochen, viel unterwegs" /> Wenig Zeit zum Kochen, viel unterwegs</label>
       </div>
     </div>
 
     <div class="form-group">
       <label>Wie viel Bewegung machst du aktuell?</label>
-      <div class="check-group">
-        <label><input type="checkbox" name="Bewegung_Regelmaessig" value="Ja" /> Regelmäßig – mehrmals pro Woche</label>
-        <label><input type="checkbox" name="Bewegung_Gelegentlich" value="Ja" /> Gelegentlich – unregelmäßig</label>
-        <label><input type="checkbox" name="Bewegung_Kaum" value="Ja" /> Kaum oder gar nicht</label>
-        <label><input type="checkbox" name="Bewegung_Intensiv" value="Ja" /> Sehr intensiv – ich trainiere viel</label>
+      <div class="radio-group">
+        <label><input type="radio" name="Bewegung" value="Regelmäßig – mehrmals pro Woche" /> Regelmäßig – mehrmals pro Woche</label>
+        <label><input type="radio" name="Bewegung" value="Gelegentlich – unregelmäßig" /> Gelegentlich – unregelmäßig</label>
+        <label><input type="radio" name="Bewegung" value="Kaum oder gar nicht" /> Kaum oder gar nicht</label>
+        <label><input type="radio" name="Bewegung" value="Sehr intensiv – ich trainiere viel" /> Sehr intensiv – ich trainiere viel</label>
       </div>
     </div>
 
@@ -1014,11 +917,11 @@
 
     <div class="form-group">
       <label>Wurde die Perimenopause bei dir ärztlich angesprochen oder bestätigt?</label>
-      <div class="check-group">
-        <label><input type="checkbox" name="Arzt_Nein" value="Ja" /> Nein, noch nicht</label>
-        <label><input type="checkbox" name="Arzt_Angesprochen" value="Ja" /> Angesprochen, aber nicht weiter verfolgt</label>
-        <label><input type="checkbox" name="Arzt_Bestaetigt" value="Ja" /> Ja, bestätigt</label>
-        <label><input type="checkbox" name="Arzt_Vermutet" value="Ja" /> Ich vermute es, wurde aber nicht untersucht</label>
+      <div class="radio-group">
+        <label><input type="radio" name="Arzt_Peri" value="Nein, noch nicht" /> Nein, noch nicht</label>
+        <label><input type="radio" name="Arzt_Peri" value="Angesprochen, aber nicht weiter verfolgt" /> Angesprochen, aber nicht weiter verfolgt</label>
+        <label><input type="radio" name="Arzt_Peri" value="Ja, bestätigt" /> Ja, bestätigt</label>
+        <label><input type="radio" name="Arzt_Peri" value="Ich vermute es, wurde aber nicht untersucht" /> Ich vermute es, wurde aber nicht untersucht</label>
       </div>
     </div>
 
@@ -1148,118 +1051,69 @@
   // ── AUSWERTUNGS-LOGIK ──
   const form = document.getElementById('orientierungsform');
 
-  // ── LIVE-ANZEIGE DER REGLER-WERTE ──
-  document.querySelectorAll('input[type="range"]').forEach(slider => {
-    const label = document.getElementById(slider.id + '_label');
-    if (!label) return;
-    const updateLabel = () => { label.textContent = slider.value; };
-    updateLabel(); // Startwert sofort anzeigen
-    slider.addEventListener('input', updateLabel);
-    slider.addEventListener('change', updateLabel);
-    slider.addEventListener('touchmove', updateLabel);
-    slider.addEventListener('touchend', updateLabel);
-  });
+  function wert(name) {
+    const els = form.elements[name];
+    if (!els) return null;
+    if (els.length === undefined) return els.checked ? els.value : null;
+    for (const el of els) { if (el.checked) return el.value; }
+    return null;
+  }
 
   function checked(name) {
     const el = form.elements[name];
     return el ? el.checked : false;
   }
 
-  function sliderVal(name) {
-    const el = form.elements[name];
-    return el ? parseInt(el.value, 10) : 0;
-  }
-
-  // Zählt, wie viele der übergebenen Checkbox-Namen angehakt sind
-  function countChecked(names) {
-    return names.filter(n => checked(n)).length;
-  }
-
   function zeigeAuswertung() {
-    // Pflichtfelder prüfen und sichtbar zum ersten fehlenden Feld scrollen
     if (!form.checkValidity()) {
-      const erstesUngueltigesFeld = form.querySelector(':invalid');
-      if (erstesUngueltigesFeld) {
-        erstesUngueltigesFeld.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        erstesUngueltigesFeld.focus({ preventScroll: true });
-        erstesUngueltigesFeld.style.borderColor = '#C4957A';
-      }
-      let hinweis = document.getElementById('validierungsHinweis');
-      if (!hinweis) {
-        hinweis = document.createElement('div');
-        hinweis.id = 'validierungsHinweis';
-        hinweis.style.cssText = 'background:#F5E6DC;border:1px solid #C4957A;color:#6B4A33;padding:1rem 1.2rem;border-radius:4px;margin:1rem 0;font-size:0.92rem;text-align:center;';
-        hinweis.textContent = 'Bitte fülle die markierten Pflichtfelder aus (Vorname, E-Mail, Zustimmung zur Datenschutzerklärung) — sie sind oben im Formular.';
-        document.getElementById('auswertungBtn').insertAdjacentElement('beforebegin', hinweis);
-      }
       form.reportValidity();
       return;
     }
 
-    const bestehenderHinweis = document.getElementById('validierungsHinweis');
-    if (bestehenderHinweis) bestehenderHinweis.remove();
-
-    try {
-      berechneUndZeigeAuswertung();
-    } catch (fehler) {
-      console.error('Fehler bei der Auswertung:', fehler);
-      alert('Es gab ein technisches Problem bei der Auswertung. Bitte versuch es noch einmal oder lade die Seite neu.');
-    }
-  }
-
-  function berechneUndZeigeAuswertung() {
     // ── SCORES BERECHNEN (0–10 je Bereich) ──
     const scores = {};
 
-    // Zyklus (Checkboxen, gewichtet nach Schwere)
-    const zyklusGewicht = {
-      Zyklus_Regelmaessig: 1, Zyklus_Unregelmaessig: 5,
-      Zyklus_Blutungsstaerke: 6, Zyklus_Fehlend: 8,
-      Zyklus_Postmenopausal: 4, Zyklus_Spirale: 0
+    // Zyklus
+    const zyklusMap = {
+      'Regelmäßig wie früher': 1,
+      'Unregelmäßiger geworden': 5,
+      'Stärkere oder schwächere Blutungen': 6,
+      'Zyklen fehlen manchmal ganz': 8,
+      'Keine Blutungen mehr (postmenopausal)': 4,
+      'Spirale / hormonelle Verhütung – keine Einschätzung möglich': 0
     };
-    let zyklusScore = 0, zyklusAnzahl = 0;
-    for (const [key, w] of Object.entries(zyklusGewicht)) {
-      if (checked(key)) { zyklusScore += w; zyklusAnzahl++; }
-    }
-    scores.zyklus = zyklusAnzahl ? Math.min(10, Math.round((zyklusScore / zyklusAnzahl) * 10) / 10) : 0;
+    scores.zyklus = zyklusMap[wert('Zyklus_Status')] ?? 0;
 
-    // Schlaf (Checkboxen als Basis, plus eigener Intensitäts-Regler)
-    const schlafGewicht = {
-      Schlaf_Gut: 1, Schlaf_Nachtaufwachen: 6, Schlaf_Einschlafen: 6,
-      Schlaf_Durchschlafen: 7, Schlaf_Schwitzen: 8
+    // Schlaf
+    const schlafMap = {
+      'Gut – ich schlafe durch': 1,
+      'Ich wache nachts auf': 6,
+      'Einschlafen fällt schwer': 6,
+      'Aufwachen und nicht mehr einschlafen': 7,
+      'Nächtliches Schwitzen stört den Schlaf': 8
     };
-    let schlafScore = 0, schlafAnzahl = 0;
-    for (const [key, w] of Object.entries(schlafGewicht)) {
-      if (checked(key)) { schlafScore += w; schlafAnzahl++; }
-    }
-    const schlafBasis = schlafAnzahl ? (schlafScore / schlafAnzahl) : 0;
-    scores.schlaf = Math.min(10, Math.round(((schlafBasis + sliderVal('Schlaf_Intensitaet')) / 2) * 10) / 10);
+    scores.schlaf = schlafMap[wert('Schlaf')] ?? 0;
 
-    // Hitze (Checkboxen als Basis, plus eigener Intensitäts-Regler)
-    const hitzeGewicht = {
-      Hitze_Keine: 0, Hitze_Gelegentlich_Tag: 4, Hitze_Haeufig: 7,
-      Hitze_Nachtschweiss: 7, Hitze_Beides: 9
+    // Hitze
+    const hitzeMap = {
+      'Nein, nichts davon': 0,
+      'Gelegentlich Hitzewallungen tagsüber': 4,
+      'Häufige Hitzewallungen': 7,
+      'Nachtschweiß, der mich aufweckt': 7,
+      'Beides – tagsüber und nachts': 9
     };
-    let hitzeScore = 0, hitzeAnzahl = 0;
-    for (const [key, w] of Object.entries(hitzeGewicht)) {
-      if (checked(key)) { hitzeScore += w; hitzeAnzahl++; }
-    }
-    const hitzeBasis = hitzeAnzahl ? (hitzeScore / hitzeAnzahl) : 0;
-    scores.hitze = Math.min(10, Math.round(((hitzeBasis + sliderVal('Hitze_Intensitaet')) / 2) * 10) / 10);
+    scores.hitze = hitzeMap[wert('Hitze')] ?? 0;
 
-    // Energie (Checkboxen als Basis, plus eigener Intensitäts-Regler)
-    const energieGewicht = {
-      Energie_Stabil: 1, Energie_Schwankend: 4,
-      Energie_Erschoepft: 7, Energie_Crash: 9
+    // Energie
+    const energieMap = {
+      'Stabil und ausreichend': 1,
+      'Schwankend, aber akzeptabel': 4,
+      'Oft erschöpft, auch ohne klaren Grund': 7,
+      'Extreme Erschöpfung / Crash-Momente': 9
     };
-    let energieScore = 0, energieAnzahl = 0;
-    for (const [key, w] of Object.entries(energieGewicht)) {
-      if (checked(key)) { energieScore += w; energieAnzahl++; }
-    }
-    const energieBasis = energieAnzahl ? (energieScore / energieAnzahl) : 0;
-    scores.energie = Math.min(10, Math.round(((energieBasis + sliderVal('Energie_Intensitaet')) / 2) * 10) / 10);
+    scores.energie = energieMap[wert('Energie')] ?? 0;
 
-    // Stimmung & Kognition (Checkboxen, gewichtet, plus Stimmungs-Regler)
+    // Stimmung & Kognition (Checkboxen, gewichtet)
     let stimmungScore = 0;
     const stimmungGewicht = {
       Stimmung_Reizbar: 1.2, Stimmung_Stimmungsschwankungen: 1.4,
@@ -1270,7 +1124,6 @@
       if (checked(key)) stimmungScore += w;
     }
     if (checked('Stimmung_Stabil')) stimmungScore = Math.max(0, stimmungScore - 2);
-    stimmungScore = (stimmungScore + sliderVal('Stimmung_Intensitaet')) / 2;
 
     let kognitionScore = 0;
     ['Konzentration_Vergessen','Konzentration_Fokus','Konzentration_Wortfindung','Konzentration_Nebel'].forEach(k => {
@@ -1280,16 +1133,14 @@
 
     scores.stimmung_kognition = Math.min(10, Math.round(((stimmungScore + kognitionScore) / 2) * 10) / 10);
 
-    // Stress (Checkboxen als Basis, plus eigener Intensitäts-Regler)
-    const stressGewicht = {
-      Stress_Gering: 1, Stress_Mittel: 4, Stress_Hoch: 7, Stress_SehrHoch: 9
+    // Stress
+    const stressMap = {
+      'Gering – ich fühle mich ausgeglichen': 1,
+      'Mittel – manchmal viel, aber handhabbar': 4,
+      'Hoch – ich bin oft angespannt': 7,
+      'Sehr hoch – ich fühle mich dauerhaft überlastet': 9
     };
-    let stressScore = 0, stressAnzahl = 0;
-    for (const [key, w] of Object.entries(stressGewicht)) {
-      if (checked(key)) { stressScore += w; stressAnzahl++; }
-    }
-    const stressBasis = stressAnzahl ? (stressScore / stressAnzahl) : 0;
-    scores.stress = Math.min(10, Math.round(((stressBasis + sliderVal('Stress_Intensitaet')) / 2) * 10) / 10);
+    scores.stress = stressMap[wert('Stress')] ?? 0;
 
     // Körper (Checkboxen)
     let koerperScore = 0;
@@ -1403,10 +1254,8 @@
     document.getElementById('profilErgebnisFeld').value = `Profil: ${profil.titel} — ${scoreText}`;
 
     // Ansicht umschalten
-    const fragebogenH2 = document.getElementById('fragebogen')?.querySelector('h2');
-    if (fragebogenH2) fragebogenH2.style.display = 'none';
-    const formLead = document.querySelector('.form-lead');
-    if (formLead) formLead.style.display = 'none';
+    document.getElementById('fragebogen').querySelector('h2').style.display = 'none';
+    document.querySelector('.form-lead').style.display = 'none';
     form.style.display = 'none';
     document.getElementById('auswertungBox').style.display = 'block';
     document.getElementById('auswertungBox').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1414,10 +1263,8 @@
 
   function zurueckZumFormular() {
     document.getElementById('auswertungBox').style.display = 'none';
-    const fragebogenH2 = document.getElementById('fragebogen')?.querySelector('h2');
-    if (fragebogenH2) fragebogenH2.style.display = '';
-    const formLead = document.querySelector('.form-lead');
-    if (formLead) formLead.style.display = '';
+    document.getElementById('fragebogen').querySelector('h2').style.display = '';
+    document.querySelector('.form-lead').style.display = '';
     form.style.display = '';
     form.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
